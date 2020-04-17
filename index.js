@@ -124,12 +124,8 @@ function makePersonObject(id, name, email) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(id, name, email) {
-    var person = {
-        id: id,
-        name: name,
-        email: email,
-    }
+function getName(person) {
+  
     return `Hello, my name is ${person.name}`;
 }
 
@@ -148,8 +144,9 @@ function getName(id, name, email) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(fruits) {
+    const index = fruits.indexOf("apple");
+    return index;
 }
 
 /**
@@ -167,8 +164,16 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(appleTest) {
+    const yesApple = [];
+    for (let i = 0; i < appleTest.length; i++) {
+        if (appleTest[i] === "apple") {
+            yesApple.push(true);
+        } else {
+            yesApple.push(false);
+        }
+    }
+    return yesApple;
 }
 
 
@@ -256,8 +261,8 @@ function getLastCarInfo(inventory) {
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
 function getModelYears(inventory) {
-    const carYears = [...inventory.car_year];
-    return carYears;
+    const carYears = [...inventory];
+    console.log(carYears.car_year);
 }
 
 /**
